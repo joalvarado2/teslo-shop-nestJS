@@ -3,8 +3,12 @@
 </p>
 
 #  Teslo API
-
-  1. Levantar la base de datos
+  1. Clonar proyecto
+  2. ```npm i```
+  3. el archivo ```.env.template``` renombrarlo a ```.env```
+  4. cambiar las variables de entorno de acuerdo a sus necesidades
+  5. Levantar la base de datos
   ```
   docker-compose up -d
   ```
+  6. Levantar: ```npm run start:dev```
