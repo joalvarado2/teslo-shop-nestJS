@@ -1,4 +1,5 @@
-import { IsString, MinLength, IsNumber, IsPositive, IsOptional, IsArray, IsInt,IsIn  } from "class-validator";
+import { IsString, MinLength, IsNumber, IsPositive, IsOptional, IsArray, IsInt, IsIn } from "class-validator";
+import { DeepPartial } from "typeorm";
 
 export class CreateProductDto {
 
@@ -24,10 +25,14 @@ export class CreateProductDto {
     @IsOptional()
     stock?: number;
 
-    @IsString({ each: true})
+    @IsString({each: true})
     @IsArray()
     sizes: string[];
 
     @IsIn(['men', 'women', 'kid', 'unisex'])
     gender: string;
+
+    @IsArray()
+    @IsOptional()
+    tags: DeepPartial<string>[];
 }
